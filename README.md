@@ -8,7 +8,7 @@ The script will detect the face from the web camera and try to recognize it amon
 * Tested on the device "Banana Pro"
 
 ## Brief Description of what I've done
-**_[Link to the .pdf report](https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/Report.pdf)_**
+**_[Link to the .pdf report](https://github.com/kagan94/Face-recognition-via-SVD-and-PCA/blob/master/Report.pdf)_**
 
 ## Recognize the image from the web camera
 1) Run **"main.py"**
