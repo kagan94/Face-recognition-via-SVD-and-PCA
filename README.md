@@ -32,7 +32,11 @@ This project implements a face detection and recognition in Python (based on Eig
 	* **Transform the image into a vector**. For example, we have an image 100x100 pixels. As a result, we will have a vector of size 1x10,000 (flatten image).
 	Read all pre-processed train images and flatten them (they must have the same size)
 	* Compute the mean face. The example of the computed mean face is below (~5 images in the face DB):
-	![Computed mean face](https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/mean_face.jpg)
+	
+	<p align="center">
+  <img alt="Computed mean face" src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/mean_face.jpg"/>
+  </p>
+  
 	* **Subtract the mean face** from each image before performing SVD and PCA
 	* **Compute the SVD** for the matrix from the previous step.
 	  
@@ -53,6 +57,7 @@ This project implements a face detection and recognition in Python (based on Eig
 	  We need to grayscale the target image, flatten it (convert to vector), and project onto PCA space by multiplying the obtained eigenfaces from step #3 by target image (flatten and grayscale).
 	  
 	  To find the identical face we will compute and compare the Euclidian distance between feature weights of test image and weights of all other images obtained in step #3. The image with the smallest score (sum of distances in all feature dimentions) will be classified as the result.
+
 ## Testing the script
 ### Recognize the image from the web camera
 1) Run **"main.py"** in the terminal:
@@ -61,12 +66,18 @@ This project implements a face detection and recognition in Python (based on Eig
     ```
 2) Press on the **"Space"** button on your keyboard. Here, the program will try to recognize the face from the web camera among the existing faces in the DB. During the first recognition, the program will compute eigenfaces, SVD, and PCA. Once it's computed, it'll work much faster.
  
-![Recognized face from the DB](https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/recognized_img.jpg =250x)
+ <p align="center">
+ <img width="75%" alt="Recognized face from the DB" src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/recognized_img.jpg"/>
+ </p>
+ 
 ### Add new image to the face DB
 * either add this image to the folder **"target_imgs"**
 * or while running "main.py" in the terminal (command **"python image_preprocessing.py"**) or run this script from your IDE press on **"Space" to capture new image from a web camera**.
 
-![Capture and save image from web camera](https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/captured_img_from_web_cam.jpg =250x)
+<p align="center">
+<img width="50%" alt="Capture and save image from web camera" 
+src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/captured_img_from_web_cam.jpg"/>
+</p>
 
 After a new image is added, you will need to stop the script "main.py" and run pre-processing step again (to grayscale the image, detect a face, and resize it) by typing command in the terminal **"python image_preprocessing.py"**:
 ```
@@ -82,13 +93,13 @@ python image_preprocessing.py
   The photo with face can be taken from different angles. That is why it is better either to use several photos of the same face
   which were made from different angles or using 3D face model.
 * Face detection does not take into account alignment of the face
-  and recognizes only 1 face from the picture (even if there are several faces on one image).
+  and recognizes only 1 face from the picture (even if there are several faces in one image).
 * We do not know how the algorithm will behave with the same face,
   but with differences in age (e.g. photo that was made 10 years ago)
 
-## Plans for future improvements:
+## Plans for future improvements
 * Test the accuracy of the algorithm
-* Extract only "k" important features to reduce dimensions during projecting onto PCA space
+* Extract only <b>K</b> important features to reduce dimensions during projecting onto PCA space
 * Add histogram equalization to frame from web camera/image to improve the quality of the recognition
 * Measure execution time of the script and detect the most time-consuming parts of the code (by using timeit or similar tools)
 * Add threshold to detect non-existing image in the face DB
@@ -96,7 +107,7 @@ python image_preprocessing.py
 ## Alternative and similar methods
 * [Fisherfaces](http://www.bytefish.de/blog/fisherfaces/) (Belhumeur, P. N., Hespanha, J., and Kriegman, D. "Eigenfaces vs. Fisherfaces: Recognition using class)
 * Face recognition based on LDA (Linear discrimination analysis).
-The key idea of LDA is to nd an optimal projection that maximizes the distance between the inter-classes
+The key idea of LDA is to and an optimal projection that maximizes the distance between the inter-classes
 (different features) and minimize the inter-class data (the most similar points that represent particular feature).
 
   Original article about LDA for face recognition - 
