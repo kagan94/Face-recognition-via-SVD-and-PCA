@@ -4,7 +4,6 @@
 import os
 import numpy as np
 import cv2
-import time, sys
 import Tkinter as tk
 from helpers import *
 
