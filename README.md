@@ -14,6 +14,32 @@ This project implements a face detection and recognition in Python (based on Eig
 * Ordinary Web Camera
 * Tested on the device "Banana Pro"
 
+## Testing the script
+### Recognize the image from the web camera
+1) Run **"main.py"** in the terminal:
+    ```
+    python main.py
+    ```
+2) Press on the **"Space"** button on your keyboard. Here, the program will try to recognize the face from the web camera among the existing faces in the DB. During the first recognition, the program will compute eigenfaces, SVD, and PCA. Once it's computed, it'll work much faster.
+ 
+ <p align="center">
+ <img width="75%" alt="Recognized face from the DB" src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/recognized_img.jpg"/>
+ </p>
+ 
+### Add new image to the face DB
+* either add this image to the folder **"target_imgs"**
+* or while running "main.py" in the terminal (command **"python image_preprocessing.py"**) or run this script from your IDE press on **"Space" to capture new image from a web camera**.
+
+<p align="center">
+<img width="50%" alt="Capture and save image from web camera" 
+src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/captured_img_from_web_cam.jpg"/>
+</p>
+
+After a new image is added, you will need to stop the script "main.py" and run pre-processing step again (to grayscale the image, detect a face, and resize it) by typing command in the terminal **"python image_preprocessing.py"**:
+```
+python image_preprocessing.py
+```
+
 ## Project Description in details
 * **Face Detection**
 
@@ -57,32 +83,6 @@ This project implements a face detection and recognition in Python (based on Eig
 	  We need to grayscale the target image, flatten it (convert to vector), and project onto PCA space by multiplying the obtained eigenfaces from step #3 by target image (flatten and grayscale).
 	  
 	  To find the identical face we will compute and compare the Euclidian distance between feature weights of test image and weights of all other images obtained in step #3. The image with the smallest score (sum of distances in all feature dimentions) will be classified as the result.
-
-## Testing the script
-### Recognize the image from the web camera
-1) Run **"main.py"** in the terminal:
-    ```
-    python main.py
-    ```
-2) Press on the **"Space"** button on your keyboard. Here, the program will try to recognize the face from the web camera among the existing faces in the DB. During the first recognition, the program will compute eigenfaces, SVD, and PCA. Once it's computed, it'll work much faster.
- 
- <p align="center">
- <img width="75%" alt="Recognized face from the DB" src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/recognized_img.jpg"/>
- </p>
- 
-### Add new image to the face DB
-* either add this image to the folder **"target_imgs"**
-* or while running "main.py" in the terminal (command **"python image_preprocessing.py"**) or run this script from your IDE press on **"Space" to capture new image from a web camera**.
-
-<p align="center">
-<img width="50%" alt="Capture and save image from web camera" 
-src="https://raw.githubusercontent.com/kagan94/Face-recognition-via-SVD-and-PCA/master/report_imgs/captured_img_from_web_cam.jpg"/>
-</p>
-
-After a new image is added, you will need to stop the script "main.py" and run pre-processing step again (to grayscale the image, detect a face, and resize it) by typing command in the terminal **"python image_preprocessing.py"**:
-```
-python image_preprocessing.py
-```
 
 ## Limitations of this approach
 * Currently, the algorithm has an assumption that there is only 1 face photo in database instead of having several photos of 1 face,
