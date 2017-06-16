@@ -138,3 +138,4 @@ The key idea of LDA is to and an optimal projection that maximizes the distance 
 11. [Yale public face dataset](http://vision.ucsd.edu/datasets/yale_face_dataset_original/yalefaces.zip)
 12. [Code for the book "Mastering OpenCV with Practical Computer Vision Projects" by Packt Publishing 2012.](https://github.com/MasteringOpenCV/code)
 13. Data-Driven Modeling & Scientific Computation. Chapter 15: Linear Algebra and Singular Value Decomposition (SVD)
+14. [Description of eigenfaces algorithm in OpenCV doc.](http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces)

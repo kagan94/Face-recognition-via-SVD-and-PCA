@@ -75,6 +75,7 @@ def compute_svd_pca():
 
     print("Computing SVD of data matrix")
     # Decompose the mean-centered matrix into three parts
+
     U, S, Vt = np.linalg.svd(ma_data.transpose(), full_matrices=False)
     V = Vt.T
 
@@ -90,7 +91,6 @@ def compute_svd_pca():
     weights = np.dot(ma_data, e_faces)  # TODO: Maybe swap + .T to e_faces
 
     # Some intermediate save:
-
     save_mean_face = False
     if save_mean_face:
         # Save mean face
